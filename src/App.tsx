@@ -9,6 +9,8 @@ import { Question, TestSection as TestSectionType, TestResult } from './types';
 import { Layout } from './components/Layout';
 import { TestComplete } from './components/TestComplete';
 import { useTest } from './hooks/useTest';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
 
 function App() {
   const { user, setUser } = useStore();
@@ -60,6 +62,8 @@ function App() {
     <Router>
       <Layout>
         <Routes>
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route
             path="/"
             element={user ? <Navigate to="/test" /> : <AuthForm />}
